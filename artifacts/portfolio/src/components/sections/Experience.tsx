@@ -26,7 +26,7 @@ const highlights = [
 
 export function Experience() {
   return (
-    <section id="education" className="py-24 md:py-32 bg-foreground text-background">
+    <section id="education" className="py-24 md:py-32 bg-primary/8 text-foreground border-y border-primary/20">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <motion.div
@@ -45,7 +45,7 @@ export function Experience() {
             <h3 className="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">
               Building the foundation, one semester at a time.
             </h3>
-            <p className="text-background/65 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Currently in my third year of B.Com CA, combining the rigour of commerce with the practicality of computer applications — preparing for a career in accounting, finance, and data.
             </p>
 
@@ -58,14 +58,14 @@ export function Experience() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1, duration: 0.6 }}
                   data-testid={`card-highlight-${i}`}
-                  className="flex gap-4 p-4 rounded-xl bg-background/5 border border-background/10"
+                  className="flex gap-4 p-4 rounded-xl bg-card border border-border"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                     {h.icon}
                   </div>
                   <div>
-                    <p className="font-semibold text-background/90 text-sm">{h.title}</p>
-                    <p className="text-background/55 text-xs mt-1 leading-relaxed">{h.desc}</p>
+                    <p className="font-semibold text-foreground text-sm">{h.title}</p>
+                    <p className="text-muted-foreground text-xs mt-1 leading-relaxed">{h.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -82,16 +82,16 @@ export function Experience() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
                   data-testid={`card-education-${index}`}
-                  className="border-t border-background/15 pt-8"
+                  className="border-t border-border pt-8"
                 >
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-3 gap-2">
-                    <h4 className="text-xl md:text-2xl font-serif font-bold">{edu.degree}</h4>
+                    <h4 className="text-xl md:text-2xl font-serif font-bold text-foreground">{edu.degree}</h4>
                     <span className="text-primary font-mono text-sm tracking-wider whitespace-nowrap">{edu.period}</span>
                   </div>
-                  <div className="text-background/60 uppercase tracking-widest text-xs font-semibold mb-4">
+                  <div className="text-muted-foreground uppercase tracking-widest text-xs font-semibold mb-4">
                     {edu.institution}
                   </div>
-                  <p className="text-background/55 leading-relaxed text-sm max-w-2xl">
+                  <p className="text-muted-foreground leading-relaxed text-sm max-w-2xl">
                     {edu.description}
                   </p>
                 </motion.div>
@@ -102,15 +102,15 @@ export function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="border-t border-background/15 pt-8"
+                className="border-t border-border pt-8"
               >
-                <p className="text-background/60 uppercase tracking-widest text-xs font-semibold mb-4">Languages</p>
+                <p className="text-muted-foreground uppercase tracking-widest text-xs font-semibold mb-4">Languages</p>
                 <div className="flex gap-4">
                   {["English", "Tamil"].map((lang, i) => (
                     <span
                       key={i}
                       data-testid={`badge-language-${i}`}
-                      className="px-5 py-2 rounded-full border border-background/20 text-background/80 text-sm font-medium"
+                      className="px-5 py-2 rounded-full border border-border text-muted-foreground text-sm font-medium"
                     >
                       {lang}
                     </span>

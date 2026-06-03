@@ -40,7 +40,6 @@ export function Hero() {
             Abdul
             <br />
             <span className="italic font-normal text-primary">Bayith</span>
-            <span className="text-foreground"> A</span>
           </motion.h1>
 
           <motion.div

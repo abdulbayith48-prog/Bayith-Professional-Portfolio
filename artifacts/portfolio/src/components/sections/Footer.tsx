@@ -2,11 +2,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background/70 py-10 border-t border-background/10">
+    <footer className="bg-card text-muted-foreground py-10 border-t border-border">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-serif text-xl tracking-wider text-background font-bold">
-            Abdul Bayith A.
+          <div className="font-serif text-xl tracking-wider text-foreground font-bold">
+            Abdul Bayith.
           </div>
 
           <div className="flex gap-6 text-xs tracking-wider uppercase">
@@ -18,7 +18,7 @@ export function Footer() {
           </div>
 
           <div className="text-xs font-mono opacity-50">
-            &copy; {currentYear} Abdul Bayith A. All rights reserved.
+            &copy; {currentYear} Abdul Bayith. All rights reserved.
           </div>
         </div>
       </div>

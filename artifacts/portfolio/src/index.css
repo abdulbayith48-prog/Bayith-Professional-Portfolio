@@ -77,50 +77,50 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Crisp Cool White */
-  --background: 210 25% 98%;
+  /* Deep Dark Slate — perfect for emerald + black */
+  --background: 220 20% 8%;
   
-  /* Deep Navy Slate */
-  --foreground: 222 47% 11%;
+  /* Light text on dark background */
+  --foreground: 210 18% 90%;
 
-  --border: 215 20% 88%;
+  --border: 220 18% 16%;
 
-  --card: 210 25% 99%;
-  --card-foreground: 222 47% 11%;
-  --card-border: 215 20% 88%;
+  --card: 220 20% 11%;
+  --card-foreground: 210 18% 90%;
+  --card-border: 220 18% 16%;
 
-  --sidebar: 210 25% 98%;
-  --sidebar-foreground: 222 47% 11%;
-  --sidebar-border: 215 20% 88%;
-  --sidebar-primary: 162 60% 40%;
+  --sidebar: 220 20% 8%;
+  --sidebar-foreground: 210 18% 90%;
+  --sidebar-border: 220 18% 16%;
+  --sidebar-primary: 162 60% 42%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 215 20% 92%;
-  --sidebar-accent-foreground: 222 47% 11%;
-  --sidebar-ring: 162 60% 40%;
+  --sidebar-accent: 220 18% 14%;
+  --sidebar-accent-foreground: 210 18% 90%;
+  --sidebar-ring: 162 60% 42%;
 
-  --popover: 210 25% 99%;
-  --popover-foreground: 222 47% 11%;
-  --popover-border: 215 20% 88%;
+  --popover: 220 20% 11%;
+  --popover-foreground: 210 18% 90%;
+  --popover-border: 220 18% 16%;
 
   /* Vivid Emerald */
-  --primary: 162 60% 40%;
+  --primary: 162 60% 42%;
   --primary-foreground: 0 0% 100%;
 
   /* Amber Gold */
   --secondary: 38 90% 52%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary-foreground: 220 20% 8%;
 
-  --muted: 215 18% 93%;
-  --muted-foreground: 220 18% 48%;
+  --muted: 220 18% 14%;
+  --muted-foreground: 215 15% 55%;
 
   --accent: 38 90% 52%;
-  --accent-foreground: 222 47% 11%;
+  --accent-foreground: 220 20% 8%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --input: 215 20% 88%;
-  --ring: 162 60% 40%;
+  --input: 220 18% 16%;
+  --ring: 162 60% 42%;
   
   --chart-1: 162 60% 40%;
   --chart-2: 38 90% 52%;

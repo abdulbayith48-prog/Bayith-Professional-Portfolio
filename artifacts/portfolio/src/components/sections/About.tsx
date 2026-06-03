@@ -20,7 +20,7 @@ export function About() {
                   <div className="w-24 h-24 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-6">
                     <span className="text-4xl font-serif font-bold text-primary">AB</span>
                   </div>
-                  <p className="font-serif text-2xl font-bold text-foreground">Abdul Bayith A</p>
+                  <p className="font-serif text-2xl font-bold text-foreground">Abdul Bayith</p>
                   <p className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">B.Com CA Student</p>
                   <div className="mt-6 flex flex-col gap-3">
                     <div className="flex items-center gap-2 justify-center text-sm text-muted-foreground">
@@ -74,7 +74,7 @@ export function About() {
 
             <div className="space-y-5 text-muted-foreground text-base leading-relaxed">
               <p>
-                I am Abdul Bayith A, a B.Com Computer Applications student at Dr. Zakir Husain College, with a strong foundation in accounting principles, data management, and financial analysis.
+                I am Abdul Bayith, a B.Com Computer Applications student at Dr. Zakir Husain College, with a strong foundation in accounting principles, data management, and financial analysis.
               </p>
               <p>
                 My academic journey has equipped me with hands-on skills in Microsoft Excel, bookkeeping, and structured data analysis — skills I've applied to real-world academic projects including an Online Banking System and an MS Excel-based accounting analysis.
