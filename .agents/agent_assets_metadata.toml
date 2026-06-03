@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "RG30053-iO8dnp4QuHOjm"
+uri = "file://artifacts/portfolio/public/images/hero-bg.png"
+type = "image"
+title = "Abstract architectural photography"
+
+[[generated]]
+id = "GJP5I5kTvwNC7uJ7IilDr"
+uri = "file://artifacts/portfolio/public/images/about-portrait.png"
+type = "image"
+title = "Artistic portrait silhouette"
+
+[[generated]]
+id = "CBhvHoEUO1ufJkE0hMnrP"
+uri = "file://artifacts/portfolio/public/images/project-1.png"
+type = "image"
+title = "Web application mockup"
+
+[[generated]]
+id = "xFB6AP__YTD8ko9gZm3Oy"
+uri = "file://artifacts/portfolio/public/images/project-2.png"
+type = "image"
+title = "Branding identity mockup"
+
+[[generated]]
+id = "znYe9k8VbUMMP46afBFI4"
+uri = "file://artifacts/portfolio/public/images/project-3.png"
+type = "image"
+title = "Mobile app mockup"
