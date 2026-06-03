@@ -1,23 +1,24 @@
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-foreground text-background/80 py-12 border-t border-background/10">
+    <footer className="bg-foreground text-background/70 py-10 border-t border-background/10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-serif text-xl tracking-wider text-background">
-            ABDUL BAYITH.
+          <div className="font-serif text-xl tracking-wider text-background font-bold">
+            Abdul Bayith A.
           </div>
-          
-          <div className="flex gap-8 text-sm tracking-wider uppercase">
-            <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-            <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-primary transition-colors">Dribbble</a>
-            <a href="#" className="hover:text-primary transition-colors">GitHub</a>
+
+          <div className="flex gap-6 text-xs tracking-wider uppercase">
+            <a href="#about" className="hover:text-primary transition-colors">About</a>
+            <a href="#expertise" className="hover:text-primary transition-colors">Skills</a>
+            <a href="#works" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#education" className="hover:text-primary transition-colors">Education</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
-          
-          <div className="text-sm font-mono opacity-60">
-            &copy; {currentYear} All rights reserved.
+
+          <div className="text-xs font-mono opacity-50">
+            &copy; {currentYear} Abdul Bayith A. All rights reserved.
           </div>
         </div>
       </div>

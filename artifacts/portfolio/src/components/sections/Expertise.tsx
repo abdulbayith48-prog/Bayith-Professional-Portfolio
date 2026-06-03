@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { PenTool, Code, Eye } from "lucide-react";
+import { Calculator, Monitor, Database } from "lucide-react";
 
 const disciplines = [
   {
-    title: "Visual Design",
-    icon: <PenTool size={32} strokeWidth={1.5} />,
-    description: "Crafting distinct visual identities and interfaces that communicate purpose and evoke emotion. Typography, color theory, and spatial rhythm are my tools.",
-    skills: ["UI/UX Design", "Brand Identity", "Design Systems", "Typography"]
+    title: "Accounting & Finance",
+    icon: <Calculator size={30} strokeWidth={1.5} />,
+    description: "Strong foundational knowledge in accounting principles, bookkeeping, and financial data analysis — gained through academic coursework and applied projects.",
+    skills: ["Accounting Principles", "Bookkeeping", "Financial Data Analysis", "Ledger Entries"]
   },
   {
-    title: "Engineering",
-    icon: <Code size={32} strokeWidth={1.5} />,
-    description: "Building robust, performant applications. I treat code as a medium for design, ensuring the underlying architecture is as elegant as the surface.",
-    skills: ["React & Next.js", "TypeScript", "Animation", "Performance"]
+    title: "Microsoft Office Suite",
+    icon: <Monitor size={30} strokeWidth={1.5} />,
+    description: "Proficient in MS Excel with advanced functions for data analysis and reporting. Skilled in MS Word for documentation and MS PowerPoint for presentations.",
+    skills: ["MS Excel (SUM, AVERAGE, COUNT, VLOOKUP)", "MS Word", "MS PowerPoint", "Data Reporting"]
   },
   {
-    title: "Creative Direction",
-    icon: <Eye size={32} strokeWidth={1.5} />,
-    description: "Guiding the holistic vision of a product from conception to launch. Ensuring every touchpoint aligns with the core narrative and business goals.",
-    skills: ["Product Strategy", "Art Direction", "Prototyping", "User Research"]
+    title: "Data & Communication",
+    icon: <Database size={30} strokeWidth={1.5} />,
+    description: "Hands-on experience in data entry, data management, and internet-based communication. Strong written and verbal communication in both English and Tamil.",
+    skills: ["Data Entry & Management", "Internet & Email", "Written Communication", "Verbal Communication"]
   }
 ];
 
@@ -26,15 +26,13 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
+    transition: { staggerChildren: 0.15 }
   }
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
 };
 
 export function Expertise() {
@@ -48,11 +46,15 @@ export function Expertise() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center max-w-2xl mx-auto mb-20"
         >
-          <h2 className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
-            Disciplines
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-6 h-[2px] bg-primary" />
+            <h2 className="text-primary font-semibold tracking-[0.2em] uppercase text-xs">
+              Skills & Expertise
+            </h2>
+            <div className="w-6 h-[2px] bg-primary" />
+          </div>
           <h3 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
-            A harmonious blend of form and function.
+            A toolkit built for finance and data.
           </h3>
         </motion.div>
 
@@ -61,31 +63,62 @@ export function Expertise() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
         >
           {disciplines.map((item, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-card p-10 border border-border hover:border-primary/50 transition-colors group"
+              data-testid={`card-skill-${index}`}
+              className="bg-card p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-500 group"
             >
-              <div className="text-primary mb-8 group-hover:scale-110 transition-transform duration-500 origin-left">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                 {item.icon}
               </div>
-              <h4 className="text-2xl font-serif text-foreground mb-4">{item.title}</h4>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <h4 className="text-xl font-serif font-bold text-foreground mb-3">{item.title}</h4>
+              <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
                 {item.description}
               </p>
               <ul className="space-y-2">
                 {item.skills.map((skill, idx) => (
-                  <li key={idx} className="text-sm font-medium tracking-wide uppercase text-foreground/80 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+                  <li key={idx} className="text-xs font-medium tracking-wide text-foreground/80 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {skill}
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="mt-16 p-8 rounded-2xl bg-card border border-border"
+        >
+          <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mb-6 font-medium">All Skills at a Glance</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              "MS Excel", "MS Word", "MS PowerPoint", "Accounting", "Bookkeeping",
+              "Financial Data Analysis", "Data Entry", "Data Management",
+              "Internet & Email", "Written Communication", "Verbal Communication",
+              "Quick Learner", "Team Player"
+            ].map((skill, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04, duration: 0.4 }}
+                data-testid={`badge-skill-${i}`}
+                className="px-4 py-1.5 rounded-full border border-border bg-background text-foreground/80 text-xs font-medium hover:border-primary hover:text-primary transition-colors cursor-default"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

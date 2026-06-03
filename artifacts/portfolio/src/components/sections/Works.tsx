@@ -1,24 +1,26 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Landmark, FileSpreadsheet } from "lucide-react";
 
 const works = [
   {
-    title: "Aura Platform",
-    category: "Product Design & Engineering",
-    image: "/images/project-1.png",
-    year: "2023"
+    title: "Online Banking System",
+    category: "Academic Project",
+    year: "2024",
+    icon: <Landmark size={40} strokeWidth={1} />,
+    color: "from-primary/20 to-primary/5",
+    accentColor: "bg-primary/10 text-primary",
+    description: "Designed and analyzed an online banking system as part of academic coursework. Covered transaction workflows, user account management, and data security concepts. Documented system requirements and produced structured project reports.",
+    tags: ["System Design", "Transaction Workflows", "User Account Management", "Data Security", "Project Documentation"]
   },
   {
-    title: "Maison Brand Identity",
-    category: "Art Direction & Branding",
-    image: "/images/project-2.png",
-    year: "2022"
-  },
-  {
-    title: "Lumina Mobile",
-    category: "Mobile Experience",
-    image: "/images/project-3.png",
-    year: "2024"
+    title: "MS Excel in Accounting",
+    category: "Academic Project",
+    year: "2024",
+    icon: <FileSpreadsheet size={40} strokeWidth={1} />,
+    color: "from-secondary/20 to-secondary/5",
+    accentColor: "bg-secondary/10 text-secondary-foreground",
+    description: "Applied advanced MS Excel functions including SUM, AVERAGE, COUNT, and VLOOKUP for accounting tasks. Prepared ledger entries and performed financial data analysis to derive business insights from raw datasets.",
+    tags: ["MS Excel", "SUM / AVERAGE / COUNT", "VLOOKUP", "Ledger Entries", "Financial Analysis"]
   }
 ];
 
@@ -34,54 +36,78 @@ export function Works() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <h2 className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
-              Selected Works
-            </h2>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-6 h-[2px] bg-primary" />
+              <h2 className="text-primary font-semibold tracking-[0.2em] uppercase text-xs">
+                Projects
+              </h2>
+            </div>
             <h3 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
-              Proof of passion.
+              Academic work that proves the craft.
             </h3>
           </motion.div>
-          <motion.a
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            href="#"
-            className="group flex items-center gap-2 text-sm uppercase tracking-wider font-medium text-foreground hover:text-primary transition-colors"
-          >
-            View All Projects
-            <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </motion.a>
         </div>
 
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-8">
           {works.map((work, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="group cursor-pointer"
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              data-testid={`card-project-${index}`}
+              className="group rounded-2xl border border-border bg-card hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden"
             >
-              <div className="overflow-hidden rounded-sm mb-8 aspect-[16/9] md:aspect-[21/9] bg-muted relative">
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-background/90 backdrop-blur flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <ArrowUpRight size={24} className="text-foreground" />
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className={`aspect-[4/3] md:aspect-auto bg-gradient-to-br ${work.color} flex items-center justify-center relative min-h-[200px]`}>
+                  <div className="absolute inset-0 opacity-[0.04]"
+                    style={{
+                      backgroundImage: "radial-gradient(circle at 2px 2px, hsl(162 60% 40%) 1px, transparent 0)",
+                      backgroundSize: "30px 30px"
+                    }}
+                  />
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 3 }}
+                    transition={{ duration: 0.4 }}
+                    className={`w-20 h-20 rounded-2xl ${work.accentColor} flex items-center justify-center relative z-10`}
+                  >
+                    {work.icon}
+                  </motion.div>
+                  <div className="absolute top-4 right-4">
+                    <span className="text-xs font-mono text-muted-foreground/60">{work.year}</span>
                   </div>
                 </div>
-              </div>
-              
-              <div className="flex justify-between items-start border-b border-border pb-6">
-                <div>
-                  <h4 className="text-2xl md:text-3xl font-serif text-foreground mb-2 group-hover:text-primary transition-colors">{work.title}</h4>
-                  <p className="text-muted-foreground uppercase tracking-wider text-xs font-medium">{work.category}</p>
+
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">{work.category}</p>
+                      <h4 className="text-2xl md:text-3xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+                        {work.title}
+                      </h4>
+                    </div>
+                    <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all group-hover:border-primary group-hover:text-primary ml-4 flex-shrink-0">
+                      <ArrowUpRight size={18} />
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed text-sm mb-6">
+                    {work.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {work.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        data-testid={`tag-project-${index}-${idx}`}
+                        className="px-3 py-1 rounded-full border border-border text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <span className="text-foreground font-serif text-lg">{work.year}</span>
               </div>
             </motion.div>
           ))}

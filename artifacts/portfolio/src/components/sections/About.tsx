@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GraduationCap, MapPin, Globe } from "lucide-react";
 
 export function About() {
   return (
@@ -12,15 +13,46 @@ export function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative"
           >
-            <div className="aspect-[3/4] overflow-hidden rounded-sm relative z-10 max-w-md mx-auto lg:mx-0">
-              <img
-                src="/images/about-portrait.png"
-                alt="Abdul Bayith"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative max-w-md mx-auto lg:mx-0">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-secondary/20 flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+                <div className="relative z-10 text-center p-12">
+                  <div className="w-24 h-24 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-6">
+                    <span className="text-4xl font-serif font-bold text-primary">AB</span>
+                  </div>
+                  <p className="font-serif text-2xl font-bold text-foreground">Abdul Bayith A</p>
+                  <p className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">B.Com CA Student</p>
+                  <div className="mt-6 flex flex-col gap-3">
+                    <div className="flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                      <GraduationCap size={14} className="text-primary" />
+                      <span>Dr. Zakir Husain College</span>
+                    </div>
+                    <div className="flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                      <Globe size={14} className="text-primary" />
+                      <span>English & Tamil</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <motion.div
+                animate={{ y: [-8, 8, -8] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase shadow-lg"
+                data-testid="badge-available"
+              >
+                Open to Opportunities
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [8, -8, 8] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+                className="absolute -bottom-4 -left-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase shadow-lg"
+                data-testid="badge-degree"
+              >
+                Graduating 2026
+              </motion.div>
             </div>
-            <div className="absolute top-8 -right-8 w-full h-full border border-primary/30 rounded-sm z-0 hidden md:block" />
-            <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-muted rounded-full z-0 hidden md:block" />
           </motion.div>
 
           <motion.div
@@ -29,35 +61,48 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <h2 className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
-              The Philosophy
-            </h2>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-6 h-[2px] bg-primary" />
+              <h2 className="text-primary font-semibold tracking-[0.2em] uppercase text-xs">
+                About Me
+              </h2>
+            </div>
+
             <h3 className="text-3xl md:text-5xl font-serif font-bold text-foreground mb-8 leading-tight">
-              Design is not just what it looks like, but how it feels.
+              Detail-oriented. Data-driven. Ready to contribute.
             </h3>
-            
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+
+            <div className="space-y-5 text-muted-foreground text-base leading-relaxed">
               <p>
-                I am Abdul Bayith, a designer and engineer driven by the intersection of beauty and logic. Rooted in a culture that values intricate craftsmanship and profound warmth, I bring those same principles to the digital realm.
+                I am Abdul Bayith A, a B.Com Computer Applications student at Dr. Zakir Husain College, with a strong foundation in accounting principles, data management, and financial analysis.
               </p>
               <p>
-                To me, an interface is a space of hospitality. It should welcome the user, guide them effortlessly, and leave a lasting impression of care. I reject the sterile and the generic in favor of the considered and the crafted.
+                My academic journey has equipped me with hands-on skills in Microsoft Excel, bookkeeping, and structured data analysis — skills I've applied to real-world academic projects including an Online Banking System and an MS Excel-based accounting analysis.
               </p>
               <p>
-                Whether architecting a complex system or refining a micro-interaction, my goal remains the same: to create work that resonates on a human level.
+                I am a quick learner and team player, eager to bring my analytical mindset and technical knowledge into a professional environment where I can grow as an accounting and finance professional.
               </p>
             </div>
 
-            <div className="mt-12 flex items-center gap-8">
-              <div>
-                <p className="text-4xl font-serif text-foreground">10+</p>
-                <p className="text-sm uppercase tracking-wider text-muted-foreground mt-2">Years of Craft</p>
-              </div>
-              <div className="w-[1px] h-12 bg-border" />
-              <div>
-                <p className="text-4xl font-serif text-foreground">50+</p>
-                <p className="text-sm uppercase tracking-wider text-muted-foreground mt-2">Projects Shipped</p>
-              </div>
+            <div className="mt-10 grid grid-cols-3 gap-6">
+              {[
+                { value: "3", label: "Years of Study" },
+                { value: "2", label: "Projects Completed" },
+                { value: "8+", label: "Core Skills" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                  data-testid={`stat-about-${i}`}
+                  className="text-center p-4 rounded-xl bg-muted/50 border border-border"
+                >
+                  <p className="text-3xl font-serif font-bold text-primary">{stat.value}</p>
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
